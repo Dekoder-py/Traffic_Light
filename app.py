@@ -19,18 +19,23 @@ def red_off():
 
 def red_on():
     pygame.draw.circle(screen, "red", (500,600), 60, 0)
+    orange_off()
 
 def orange_off():
     pygame.draw.circle(screen, "#fab387", (500,400), 60, 0)
 
 def orange_on():
     pygame.draw.circle(screen, "orange", (500,400), 60, 0)
+    red_off()
+    green_off()
 
 def green_off():
     pygame.draw.circle(screen, "#a6e3a1", (500,200), 60, 0)
 
 def green_on():
     pygame.draw.circle(screen, "green", (500,200), 60, 0)
+    red_off()
+    orange_off()
 
 pygame.display.flip()
 
@@ -43,15 +48,9 @@ while True:
     s = randint(500,s)
     if c == "red":
         red_on()
-        orange_off()
-        green_off()
     elif c == "orange":
-        red_off()
         orange_on()
-        green_off()
     elif c == "green":
-        red_off()
-        orange_off()
         green_on()
 
     pygame.display.flip()
